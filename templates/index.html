@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+  <meta charset="utf-8">
+  <title>MAIIC Education</title>
+
+  <!-- mobile responsive meta -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  <!-- ** Plugins Needed for the Project ** -->
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="/static/plugins/bootstrap/bootstrap.min.css">
+	<!-- FontAwesome -->
+  <link rel="stylesheet" href="/static/plugins/fontawesome/font-awesome.min.css">
+	<!-- Animation -->
+	<link rel="stylesheet" href="/static/plugins/animate.css">
+	<!-- Prettyphoto -->
+	<link rel="stylesheet" href="/static/plugins/prettyPhoto.css">
+	<!-- Owl Carousel -->
+	<link rel="stylesheet" href="/static/plugins/owl/owl.carousel.css">
+	<link rel="stylesheet" href="/static/plugins/owl/owl.theme.css">
+	<!-- Flexslider -->
+	<link rel="stylesheet" href="/static/plugins/flex-slider/flexslider.css">
+	<!-- Flexslider -->
+	<link rel="stylesheet" href="/static/plugins/cd-hero/cd-hero.css">
+	<!-- Style Swicther -->
+	<link id="style-switch" href="/static/css/presets/preset3.css" media="screen" rel="stylesheet" type="text/css">
+
+	<!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
+    <!--[if lt IE 9]>
+      <script src="plugins/html5shiv.js"></script>
+      <script src="plugins/respond.min.js"></script>
+    <![endif]-->
+
+  <!-- Main Stylesheet -->
+  <link href="/static/css/style.css" rel="stylesheet">
+  
+  <!--Favicon-->
+	<link rel="icon" href="/static/img/favicon/favicon-32x32.png" type="image/x-icon" />
+	<link rel="icon" type="image/png" href="/static/images/icons/favicon.ico"/>
+	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/static/img/favicon/favicon-144x144.png">
+	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="/static/img/favicon/favicon-72x72.png">
+	<link rel="apple-touch-icon-precomposed" href="/static/img/favicon/favicon-54x54.png">
+
+</head>
+
+<body>
+<div class="body-inner">
+
+<!-- Header start -->
+<header id="header" class="fixed-top header" role="banner">
+	<a class="navbar-brand navbar-bg" href="/"><img class="img-fluid float-right" src="/static/images/logo.png" alt="logo"></a>
+	<div class="container">
+		<nav class="navbar navbar-expand-lg navbar-dark">
+			<button class="navbar-toggler ml-auto border-0 rounded-0 text-white" type="button" data-toggle="collapse"
+				data-target="#navigation" aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="fa fa-bars"></span>
+			</button>
+
+			<div class="collapse navbar-collapse text-center" id="navigation">
+				<ul class="navbar-nav ml-auto">
+						<li class="nav-item">
+						<a class="nav-link" href="/">Home</a>
+					</li>
+
+					{% if session.loggedin %}
+					<li class="nav-item">
+						<a class="nav-link" href="student_dashboard">Student Dashboard</a>
+					</li>
+					{% endif %}
+					
+					<li class="nav-item dropdown active">
+						    <a class="nav-link dropdown" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
+							aria-expanded="false">
+							Registration
+						</a>
+							<div class="dropdown-menu">
+							<a class="dropdown-item" href="student_registration">Student Registration</a>
+							<a class="dropdown-item" href="faculty_registration">Faculty Registration</a>
+							
+						</div>
+					</li>
+				
+					<li class="nav-item dropdown active">
+						<a class="nav-link dropdown" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
+							aria-expanded="false">
+							Login
+						</a>
+						<div class="dropdown-menu">
+							<a class="dropdown-item" href="student_login">Student Login</a>
+							<a class="dropdown-item" href="faculty_login">Faculty Login</a>
+							
+						</div>
+					</li>
+					
+				</ul>
+			</div>
+		</nav>
+	</div>
+</header>
+<!--/ Header end -->
+
+<!-- Slider start -->
+<section id="home" class="p-0">
+	<div id="main-slide" class="cd-hero">
+		<ul class="cd-hero-slider">
+			<li class="selected">
+				<div class="overlay2">
+					<img class="" src="/static/images/slider/bg1.jpg" alt="slider">
+				</div>
+				<div class="cd-full-width">
+					<h2>It’s pure Indian Platform!</h2>
+					<h3>An start-up company with huge vision.</h3>
+					<a href="student_login" class="btn btn-primary white cd-btn">Start Now</a>
+					<a href="#0" class="btn btn-primary solid cd-btn">Learn More</a>
+				</div> <!-- .cd-full-width -->
+			</li>
+			<li>
+				<div class="overlay2">
+					<img class="" src="/static/images/slider/bg2.jpg" alt="slider">
+				</div>
+				<div class="cd-half-width cd-img-container img-right">
+					<img src="/static/images/slider/bg-thumb2.png" alt="">
+				</div> <!-- .cd-half-width.cd-img-container -->
+				<div class="cd-half-width">
+					<h2>How Big Can You Dream?</h2>
+					<p>It’s a proud moment for us, we are work for nation building with quality education providing.</p>
+					<a href="student_login"  class="cd-btn btn btn-primary solid">Start Now</a>
+				</div> <!-- .cd-half-width -->
+
+				<div class="cd-half-width cd-img-container">
+					<img src="/static/images/slider/bg-thumb1.png" alt="">
+				</div> <!-- .cd-half-width.cd-img-container -->
+			</li>
+			<li>
+				<div class="overlay2">
+					<img class="" src="/static/images/slider/bg3.jpg" alt="slider">
+				</div>
+				<div class="cd-half-width">
+					<h2>It’s pure Indian Platform</h2>
+					<p>एक प्रयास कि देश का हर एक बच्चा पढ़ पाये..</p>.
+					
+					<a href="student_registration" class="cd-btn btn btn-primary solid">Start</a>
+					
+				</div> <!-- .cd-half-width..cd-img-container -->
+			</li>
+			<li class="cd-bg-video">
+				<div class="cd-half-width">
+					<h2>No any external Foreign Investment !</h2>
+					<h3>An effort that every child of the country can read.</h3>
+
+					<a href="student_login" class="cd-btn btn btn-primary solid">Learn more</a>
+				</div> <!-- .cd-half-width -->
+
+				<div class="cd-bg-video-wrapper" data-video="/static/videos/video">
+					<!-- video element will be loaded using jQuery -->
+				</div> <!-- .cd-bg-video-wrapper -->
+			</li>
+		</ul>
+		<!--/ cd-hero-slider -->
+
+		<div class="cd-slider-nav">
+			<nav>
+				<span class="cd-marker item-1"></span>
+				<ul>
+					<li class="selected"><a href="#0"><i class="fa fa-lightbulb-o"></i> Invent</a></li>
+					<li><a href="#0"><i class="fa fa-graduation-cap"></i> Dream</a></li>
+					<li><a href="#0"><i class="fa fa-android"></i> Tech</a></li>
+					<li class="video"><a href="#0"><i class="fa fa-video-camera"></i> Video</a></li>
+				</ul>
+			</nav>
+		</div> <!-- .cd-slider-nav -->
+
+	</div>
+	<!--/ Main slider end -->
+</section>
+<!--/ Slider end -->
+
+<!-- Feature box start -->
+<section id="feature" class="feature">
+	<div class="container">
+		<div class="row">
+			<div class="feature-box col-sm-4 wow fadeInDown" data-wow-delay=".5s">
+				<span class="feature-icon float-left"><i class="fa fa-heart-o"></i></span>
+				<div class="feature-content">
+					<h3>Online Free & Pro Classes Available</h3>
+					
+				</div>
+			</div>
+			<!--/ End first featurebox -->
+
+			<div class="feature-box col-sm-4 wow fadeInDown" data-wow-delay=".5s">
+				<span class="feature-icon float-left"><i class="fa fa-codepen"></i></span>
+				<div class="feature-content">
+					<h3>Free to Read any time</h3>
+					<p>So,be ready to learn with us..</p>
+					
+				</div>
+			</div>
+			<!--/ End 2nd featurebox -->
+
+			<div class="feature-box col-sm-4 wow fadeInDown" data-wow-delay=".5s">
+				<span class="feature-icon float-left"><i class="fa fa-film"></i></span>
+				<div class="feature-content">
+					<h3>Expert & Experience Teachers help you in your academic learning's</h3>
+					
+				</div>
+			</div>
+			<!--/ End 3rd featurebox -->
+		</div><!-- Content row end -->
+
+	</div>
+	<!--/ Container end -->
+</section>
+<!--/ Feature box end -->
+
+
+<section id="image-block" class="image-block p-0">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-6 ts-padding"
+				style="height:550px;background:url(/static/images/image-block-bg.jpg) 50% 50% / cover no-repeat;">
+			</div>
+			<div class="col-md-6 ts-padding img-block-right">
+				<div class="img-block-head text-center">
+					
+					<h3>Why Choose Us</h3>
+					<p>It’s India’s most affordable educational platform for those 
+                         who are not afford too much cost on extra studies.
+
+					</p>
+				</div>
+
+				<div class="gap-30"></div>
+
+				<div class="image-block-content">
+					<span class="feature-icon float-left"><i class="fa fa-graduation-cap"></i></span>
+					<div class="feature-content">
+						<h3>Learning is fun with MAIIC Education</h3>
+						
+					</div>
+				</div>
+				<!--/ End 1st block -->
+
+				<div class="image-block-content">
+					<span class="feature-icon float-left"><i class="fa fa-book"></i></span>
+					<div class="feature-content">
+						<h3>Unlimited Doubt Solving</h3>
+						<p>Unlimited Doubt Solving with our Experts</p>
+					</div>
+				</div>
+				<!--/ End 1st block -->
+
+				<div class="image-block-content">
+					<span class="feature-icon float-left"><i class="fa fa-desktop"></i></span>
+					<div class="feature-content">
+						<h3> 24X7 Availability</h3>
+						<p>Doubts can crop up anytime, and now, they can be resolved anytime too!</p>
+					</div>
+				</div>
+				<!--/ End 1st block -->
+
+			</div>
+		</div>
+	</div>
+</section>
+<!--/ Image block end -->
+
+
+
+<!-- Footer start -->
+<section id="footer" class="footer footer-map">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12 text-center">
+				
+				<div class="gap-20"></div>
+				<ul class="social-icon dark unstyled">
+					<li>
+						<a title="Twitter" href="#">
+							<span class="icon-pentagon wow bounceIn"><i class="fa fa-twitter"></i></span>
+						</a>
+						<a title="Facebook" href="#">
+							<span class="icon-pentagon wow bounceIn"><i class="fa fa-facebook"></i></span>
+						</a>
+						<a title="Google+" href="#">
+							<span class="icon-pentagon wow bounceIn"><i class="fa fa-google-plus"></i></span>
+						</a>
+						<a title="linkedin" href="#">
+							<span class="icon-pentagon wow bounceIn"><i class="fa fa-linkedin"></i></span>
+						</a>
+						<a title="Pinterest" href="#">
+							<span class="icon-pentagon wow bounceIn"><i class="fa fa-pinterest"></i></span>
+						</a>
+						<a title="Skype" href="#">
+							<span class="icon-pentagon wow bounceIn"><i class="fa fa-skype"></i></span>
+						</a>
+						<a title="Dribble" href="#">
+							<span class="icon-pentagon wow bounceIn"><i class="fa fa-dribbble"></i></span>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<!--/ Row end -->
+		<div class="row">
+			<div class="col-md-12 text-center">
+				<div class="copyright-info">
+					&copy; Copyright 2020 MAIIC. <span>Designed &amp; Developed by- <a href="#"
+							target="_blank">MAIIC Education</a></span>
+				</div>
+			</div>
+		</div>
+		<!--/ Row end -->
+		
+	<!--/ Container end -->
+</section>
+<!--/ Footer end -->
+
+</div><!-- Body inner end -->
+
+<!-- jQuery -->
+<script src="/static/plugins/jQuery/jquery.min.js"></script>
+<!-- Bootstrap JS -->
+<script src="/static/plugins/bootstrap/bootstrap.min.js"></script>
+<!-- Style Switcher -->
+<script type="text/javascript" src="/static/plugins/style-switcher.js"></script>
+<!-- Owl Carousel -->
+<script type="text/javascript" src="/static/plugins/owl/owl.carousel.js"></script>
+<!-- PrettyPhoto -->
+<script type="text/javascript" src="/static/plugins/jquery.prettyPhoto.js"></script>
+<!-- Bxslider -->
+<script type="text/javascript" src="/static/plugins/flex-slider/jquery.flexslider.js"></script>
+<!-- CD Hero slider -->
+<script type="text/javascript" src="/static/plugins/cd-hero/cd-hero.js"></script>
+<!-- Isotope -->
+<script type="text/javascript" src="/static/plugins/isotope.js"></script>
+<script type="text/javascript" src="/static/plugins/ini.isotope.js"></script>
+<!-- Wow Animation -->
+<script type="text/javascript" src="/static/plugins/wow.min.js"></script>
+<!-- Eeasing -->
+<script type="text/javascript" src="/static/plugins/jquery.easing.1.3.js"></script>
+<!-- Counter -->
+<script type="text/javascript" src="/static/plugins/jquery.counterup.min.js"></script>
+<!-- Waypoints -->
+<script type="text/javascript" src="/static/plugins/waypoints.min.js"></script>
+<!-- google map -->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcABaamniA6OL5YvYSpB3pFMNrXwXnLwU&libraries=places"></script>
+<script src="/static/plugins/google-map/gmap.js"></script>
+
+<!-- Main Script -->
+<script src="/static/js/script.js"></script>
+
+</body>
+
+</html>
