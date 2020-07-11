@@ -5,12 +5,13 @@ from sqlalchemy import DateTime
 from flask_mail import Mail, Message
 from logging import FileHandler, WARNING
 
-
+from flask_bcrypt import Bcrypt
 from flask_login import LoginManager , login_required, logout_user, current_user, login_user
 from flask_admin import Admin
 from flask_admin.contrib.sqla import ModelView
 
 from itsdangerous import URLSafeTimedSerializer, SignatureExpired
+
 
 app = Flask(__name__)
 
@@ -28,6 +29,7 @@ db = SQLAlchemy(app)
 login_manager = LoginManager()
 login_manager.init_app(app)
 
+bcrypt = Bcrypt(app)
 
 mail = Mail(app)
 

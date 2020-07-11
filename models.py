@@ -12,7 +12,7 @@ def load_user(id):
 class Students_data(db.Model, UserMixin):
     __tablename__="students_data"
     id = db.Column(db.Integer, primary_key = True)
-    student_id = db.Column(db.String(50))
+    student_id = db.Column(db.String(50), unique=True)
     first_name = db.Column(db.String(50))
     last_name = db.Column(db.String(50))
     student_email = db.Column(db.String(50))
@@ -24,7 +24,7 @@ class Students_data(db.Model, UserMixin):
     current_address = db.Column(db.String(50))
     board = db.Column(db.String(50))
     subjects = db.Column(db.String(50))
-    student_password= db.Column(db.String(50))
+    student_password= db.Column(db.String(60))
     date_created = db.Column(db.DateTime, default= datetime.datetime.utcnow)
     payment_status = db.Column(db.Boolean, default = False)
     #is_admin = db.Column(db.Boolean, default=True)

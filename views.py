@@ -11,7 +11,8 @@ from app import URLSafeTimedSerializer, SignatureExpired, t
 
 from app import login_manager, login_required, logout_user, current_user, login_user
 from flask_mysqldb import MySQLdb
-
+import random
+import string
 
 
 #from models import Studentdtls
@@ -35,13 +36,13 @@ def index():
 def student_login():
 
     if request.method == "POST":
-
-
-        
-        #return render_template('thankyou1.html')
-        pass
-
-
+        user = Students_data.query.filter_by(student_id=request.form['student_id']).first()
+        print(user)
+        if user and bcrypt.check_password_hash(user.student_password, request.form['student_password']):
+            login_user(user)
+            return redirect(url_for('student_dashboard'))
+        else:
+            flash('Login Unsuccessful. Please check Student_id and password', 'danger')
 
             
     return render_template('student_login.html')   
@@ -58,6 +59,7 @@ def student_registration():
 
         first_name = request.form['first_name']
         last_name = request.form['last_name']
+        student_id =  random.randrange(100000,999999)
         student_email = request.form['student_email']
         parent_email = request.form['parent_email']
         student_phone_number = request.form['student_phone_number']
@@ -72,22 +74,36 @@ def student_registration():
         subjects = ','.join(subj)
 
 
-        student_id = random.randrange(100000,999999)
-        student_password = random.randrange(100000,999999)
+        auto_password = random.randrange(100000,999999)
+
+        string_pass = str(auto_password)
+
+        hashed_password = bcrypt.generate_password_hash(string_pass).decode('utf-8')
+
+        student_password = hashed_password
 
         user = Students_data(student_id, first_name, last_name, student_email, parent_email , student_phone_number, parent_phone_number, city, standard, current_address, board, subjects, student_password)
         db.session.add(user)
         db.session.commit()
 
-        sms_data = (first_name,last_name,student_email,student_id,student_password)
-
+        ### Confirmation mail code  ###
+        '''
         token = t.dumps(student_email, salt='email-confirm')
         msg = Message('Confirmation email', sender='enquiry@maiiceducation.com', recipients=[student_email])
         link = url_for('confirm_email', token=token, _external=True )
         msg.body = 'Your link is {}'.format(link)
         mail.send(msg)
+        '''
 
-        return render_template('thankyou.html')
+
+        msg = Message(subject='Login details...', recipients = [student_email, parent_email])
+        msg.body = "Hello {} {}, Your login details are >> Student ID = {}, Password = {}".format(first_name, last_name, student_id, auto_password)
+
+        mail.send(msg)
+
+
+        msg = flash('Registration successful ! Login details are on your mail.', 'success')
+        return render_template('student_login.html', msg = msg)
 
     return render_template('student_registration.html')      
 
@@ -200,25 +216,28 @@ def faculty_login():
     return render_template('faculty_login.html')          
 
 
+
+
 @app.route('/student_dashboard')
-@login_required
 def student_dashboard():
-    
     return render_template('student_dashboard.html')
 
 
+
+
+
+
 @app.route('/student_all_videos')
-@login_required
 def student_all_videos():
     return render_template('student_all_videos.html')
 
+
 @app.route('/student_update_profile')
-@login_required
 def student_update_profile():
     return render_template('student_update_profile.html')    
 
+
 @app.route('/student_update_profile_picture')
-@login_required
 def student_update_profile_picture():
     return render_template('student_update_profile_picture.html')  
 
