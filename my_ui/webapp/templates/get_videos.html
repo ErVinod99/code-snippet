@@ -1,0 +1,124 @@
+{% extends "dashboard_layout.html" %}
+
+
+{% block body %}
+<!--------------------------------------------------------
+
+<div class="row">
+
+    <div class="col-sm-12">
+        <div class="card">
+            <div class="card-block">
+                <h4 class="card-title">List of Videos</h4>
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Sr.No.</th>
+                                <th>File Path</th>
+                                <th>Standard</th>
+                                <th>Subject</th>
+                                <th>Chapter</th>
+                                <th>Video URL</th>
+                                <th>Upload Time</th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for video in videos['video_data'] %}
+                            <tr>
+
+                                <td>{{ video[0] }}</td>
+                                <td>{{ video[2] }}</td>
+                                <td>{{ video[4] }}</td>
+                                <td>{{ video[5] }}</td>
+                                <td>{{ video[6] }}</td>
+                                <td>{{ video[8] }}</td>
+                                <td>{{ video[10] }}</td>
+
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+----------------------------------------------->
+<!----------------------------------------------------------
+
+<div id="port-folio">
+    <div class="row ">
+        {% if status != True %}
+        <div class="col-md-4 col-sm-12">
+            <div class="portfolio-item awesome mix_all" data-cat="awesome">
+                <h4 class="text-center">Demo Videos</h4>
+                <div class="embed-responsive embed-responsive-16by9">
+
+
+                    <video poster="/images/w3schools_green.jpg" controls>
+                        <source src="" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+
+
+                </div>
+                <h5>#-Demo videos</h5>
+            </div>
+        </div>
+        {% else %}
+
+
+        {% for video in videos['video_data']|sort(reverse=False) %}
+        <div class="col-md-4 col-sm-12">
+            <div class="portfolio-item awesome mix_all" data-cat="awesome">
+                <h4 class="text-center">{{ [video[0]] }}</h4>
+                <div class="embed-responsive embed-responsive-16by9">
+
+
+                    <video poster="/images/w3schools_green.jpg" controls>
+                        <source src="{{ video[8] }}" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+
+
+                </div>
+                <h5>#-{{ video[6] }}</h5>
+            </div>
+        </div>
+        {% endfor %}
+        <br>
+        {% endif %}
+    </div>
+</div>
+
+------------------------------------>
+<div class="container">
+    <div class="row">
+        {% for video in videos['video_data'] %}
+
+        <div class="col-lg-6 col-md-4 col-xs-6">
+
+            <div>
+                <h4 class="text-center">{{ [video[0]] }}</h4>
+            </div>
+            <div class="embed-responsive embed-responsive-16by9">
+                <video controls>
+                    {% if video[2] %}
+                    <source src="{{ video[2] }}" type="video/mp4">
+                    {% else %}
+                    <source src="{{ video[8] }}" type="video/mp4">
+                    {% endif %}    
+                    Your browser does not support the audio element.
+                </video>
+            </div>
+
+            <h5>{{ video[6] }}</h5>
+
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}

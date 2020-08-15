@@ -1,0 +1,177 @@
+<div id="page-wrapper">
+  <div id="page-inner">
+    <div class="row">
+      <h1>Demo Videos</h1>
+
+    </div>
+    <!-- /. ROW  -->
+    <div id="port-folio">
+      <div class="row ">
+
+        <div class="col-md-4 ">
+
+          <div class="portfolio-item awesome mix_all align-center" data-cat="awesome">
+            {% for video in videos['video_data'] %}
+            <video width="400" controls>
+              <source src="{{ video[8] }}" type="video/mp4">
+            </video>
+            <p class="text-center">[{{ video[0]}}]-{{ video[6] }}</p> 
+            {% endfor %}  
+          </div>
+        </div>
+        <div class="col-md-4 ">
+
+          <div class="portfolio-item landscape mix_all" data-cat="landscape">
+
+
+            <div class="portfolio-item awesome mix_all" data-cat="awesome">
+
+
+              <div class="embed-responsive embed-responsive-16by9">
+
+
+              </div>
+
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 ">
+
+          <div class="portfolio-item nature mix_all" data-cat="nature">
+
+
+            <div class="portfolio-item awesome mix_all" data-cat="awesome">
+
+
+              <div class="embed-responsive embed-responsive-16by9">
+
+
+              </div>
+
+
+
+            </div>
+          </div>
+
+        </div>
+        
+
+      </div>
+    </div>
+
+
+  </div>
+  <!-- /. PAGE INNER  -->
+</div>
+
+
+<div class="row">
+  <!-- column -->
+  <div class="col-sm-12">
+      <div class="card">
+          <div class="card-block">
+
+              <div class="table-responsive">
+                  <table class="table">
+
+                      <thead>
+                          <tr>
+                              <th>videoFilePath</th>
+                              
+                              <th>class_standard</th>
+                              <th>subject</th>
+                              <th>chapter</th>
+                              <th>video_url</th>
+                          </tr>
+                      </thead>
+                      <tbody>
+                        {% for video in videos['video_data'] %}
+                        {% if videos['payment_status'] == False %}
+                        
+
+                          <tr>
+                              <td>{{ video[2]}}</td>
+                              
+                              <td>{{ video[4] }}</td>
+                              <td>{{ video[5] }}</td>
+                              <td>{{ video[6] }}</td>
+                              <td>{{ video[8] }}</td>
+                          </tr>
+                         {% endif %}
+                          
+                      
+                          {% endfor %}  
+                          
+                      </tbody>
+
+                    
+                  </table>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                  <!--------------------------------------------------
+                        <hr>
+                        {% if current_user[3] != True %}
+                        <h3>Your payment is pending, please pay for accessing videos.
+                            {{ current_user[4] }}
+                            {% if current_user[4] == 'Math,Science' %}
+                            <a href="https://pages.razorpay.com/pl_F59rdMdAIZrAR6/view" target="_blank">Pay
+                                Now(Rs.200)</a>
+                            {% endif %}
+
+                            {% if current_user[4] == 'Math' %}
+                            <a href="https://pages.razorpay.com/pl_F59n7l54gsiLGe/view">Pay Now(Rs.100)</a>
+                            {% endif %}
+
+                            {% if current_user[4] == 'Science' %}
+                            <a href="https://pages.razorpay.com/pl_F59n7l54gsiLGe/view">Pay Now(Rs.100)</a>
+                            {% endif %}
+                        </h3>
+                        --------------------->
+
+
+
+
+
+                                                {% if current_user[3] != True %}
+                        <h3>Your payment is pending, please pay for accessing videos.
+                            {{ current_user[4] }}
+                            {% if current_user[4] == 'Math,Science' %}
+                            <a href="https://pages.razorpay.com/pl_F59rdMdAIZrAR6/view" target="_blank">Pay
+                                Now(Rs.200)</a>
+                            {% endif %}
+
+                            {% if current_user[4] == 'Math' %}
+                            <a href="https://pages.razorpay.com/pl_F59n7l54gsiLGe/view">Pay Now(Rs.100)</a>
+                            {% endif %}
+
+                            {% if current_user[4] == 'Science' %}
+                            <a href="https://pages.razorpay.com/pl_F59n7l54gsiLGe/view">Pay Now(Rs.100)</a>
+                            {% endif %}
+                        </h3>
+
+
+
+                                                {% endif %}
+                        <!-------------------------------------
+                                    <h3 class="text-themecolor m-b-0 m-t-0">Student Dashboard</h3>
+                                    ----------------------------------->

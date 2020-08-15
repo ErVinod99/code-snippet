@@ -1,0 +1,70 @@
+	<!-- Start Header Area -->
+	<header id="header">
+		<div class="container">
+			<div class="row align-items-center justify-content-between d-flex">
+				<div id="logo">
+					<a href="/"><img src="/static/img/logo.png" alt="" title="" /></a>
+				</div>
+				<nav id="nav-menu-container">
+					<ul class="nav-menu">
+            {% if "token" in session %}
+
+	            {% if session["role"] in ['student', 'faculty', 'admin'] %}
+	              <li class="nav-item">
+	                <a class="nav-link" href="/"></a>
+	              </li>
+	            {% endif %}
+
+	            {% if session["role"] in ['faculty', 'admin'] %}
+	              <li class="nav-item">
+	                <a class="nav-link" href="/upload_videos"></a>
+	              </li>
+	            {% endif %}
+		        {% endif %}
+		        
+            {% if "token" not in session %}
+							<li class="menu-active"><a href="/">Home</a></li>
+							<li class="menu-active"><a href="courses">Courses</a></li>
+	            
+
+							<li class="menu-has-children menu-active"><a href="">Registration</a>
+								<ul>
+									<li><a href="/student_signup">Student Registration</a></li>
+									<li><a href="/faculty_signup">Faculty Registration</a></li>
+								</ul>
+							</li>
+							<li class="menu-has-children menu-active"><a href="">Login</a>
+								<ul>
+									<li><a href="/student_login">Student Login</a></li>
+									<li><a href="/faculty_login">Faculty Login</a></li>
+									<li><a href="/admin_login">Admin Login</a></li>
+								</ul>
+							</li>
+	            <li class="menu-active"><a href="contact">Contact</a></li>
+
+			{% endif %}
+			
+			{% if "token" in session %}				
+
+				{% if session['role'] in ['student'] %}
+				<li><a href="/students_dashboard">Student Dashboard</a></li>
+				{% endif %}
+
+				{% if session['role'] in ['faculty'] %}
+				<li><a href="/faculty_dashboard">Faculty Dashboard</a></li>
+				{% endif %}
+
+				{% if session['role'] in ['admin'] %}
+				<li><a href="/admin_dashboard">Admin Dashboard</a></li>
+				{% endif %}
+	
+			
+			<li><a href="/logout">Logout</a></li>
+		
+			{% endif %}
+
+					</ul>
+				</nav><!-- #nav-menu-container -->
+			</div>
+		</div>
+	</header>

@@ -1,0 +1,158 @@
+{% extends "layout.html" %}
+{% block title %}Homepage{% endblock %}
+{% block body %}
+
+{% include '/includes/_header.html' %}
+
+
+  	<!-- Start Banner Area -->
+	<section class="home-banner-area relative">
+		<div class="container">
+			<div class="row fullscreen d-flex align-items-center justify-content-center">
+				<div class="banner-content col-lg-8 col-md-12">
+					{% include "/includes/_message.html" %}
+					<h1 class="wow fadeIn" data-wow-duration="4s">MAIIC Gurukool Education</h1><br><br>
+					
+					
+						<h2>"किं किं न साधयति कल्पलतेव विद्या"</h2>
+						<h2>"Every wish can be fulfilled by Vidya like a Kalpavriksh"</h2>
+ 
+						
+				
+					<h3 class="text-white mt-5">Our courses</h3>
+
+					<div class="courses pt-20">
+						<a href="#" data-wow-duration="1s" data-wow-delay=".3s" class="primary-btn transparent mr-10 mb-10 wow fadeInDown"><h3 class="text-white">English</h3>
+							</a>
+						<a href="#" data-wow-duration="1s" data-wow-delay=".6s" class="primary-btn transparent mr-10 mb-10 wow fadeInDown"><h3 class="text-white">Science</h3></a>
+						<a href="#" data-wow-duration="1s" data-wow-delay=".9s" class="primary-btn transparent mr-10 mb-10 wow fadeInDown"><h3 class="text-white">Maths</h3></a>
+						<a href="#" data-wow-duration="1s" data-wow-delay="1.2s" class="primary-btn transparent mr-10 mb-10 wow fadeInDown"><h3 class="text-white">Hindi</h3>
+	
+						</a>
+						<a href="#" data-wow-duration="1s" data-wow-delay="1.5s" class="primary-btn transparent mr-10 mb-10 wow fadeInDown"><h3 class="text-white">Marathi</h3></a>
+						<a href="#" data-wow-duration="1s" data-wow-delay="1.8s" class="primary-btn transparent mr-10 mb-10 wow fadeInDown"><h3 class="text-white">Social Science</h3>
+						</a>
+					
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="rocket-img">
+			<img src="/static/img/rocket.png" alt="">
+		</div>
+	</section>
+	<!-- End Banner Area -->
+
+
+	<!-- Start About Area -->
+	<section class="about-area section-gap">
+		<div class="container">
+			<div class="row align-items-center justify-content-center">
+				<div class="col-lg-5 col-md-6 about-left">
+					<img class="img-fluid" src="/static/img/about.jpg" alt="">
+				</div>
+				<div class="offset-lg-1 col-lg-6 offset-md-0 col-md-12 about-right">
+					<h1>
+						WHY CHOOSE US ? <br>
+					</h1>
+					<div class="wow fadeIn" data-wow-duration="1s">
+						<p>
+							It’s India’s most affordable educational platform for all Indian’s.
+							We are providing an Augmented digital content may include text, images, video, audio (music and voice),
+							By personalizing instruction,augmented learning has been shown to improve learning performance for a life time. 
+
+
+						</p>
+					</div>
+					<a href="courses" class="primary-btn">Explore Courses</a>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- End About Area -->
+
+
+	<!--Start Feature Area -->
+	<section class="feature-area">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-lg-8">
+					<div class="section-title text-center">
+						<h1>Features That Make Us Powerfull</h1>
+						
+					</div>
+				</div>
+			</div>
+			<div class="feature-inner row">
+				<div class="col-lg-4 col-md-6">
+					<div class="feature-item">
+						<i class="ti-crown"></i>
+						<h4>Learning is fun with MAIIC Education</h4>
+						<div class="wow fadeIn" data-wow-duration="1s" data-wow-delay=".1s">
+							<p>
+								
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-4 col-md-6">
+					<div class="feature-item">
+						<i class="ti-tablet"></i>
+						<h4>Online free & pro classes available for you.</h4>
+						<div class="wow fadeIn" data-wow-duration="1s" data-wow-delay=".3s">
+							<p>
+								
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-4 col-md-6">
+					<div class="feature-item">
+						<i class="ti-medall-alt"></i>
+						<h4>Free to read any time any where.</h4>
+						<div class="wow fadeIn" data-wow-duration="1s" data-wow-delay=".5s">
+							<p>
+								
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-4 col-md-6">
+					<div class="feature-item">
+						<i class="ti-key"></i>
+						<h4>Lifetime Access</h4>
+						<div class="wow fadeIn" data-wow-duration="1s" data-wow-delay=".1s">
+							<p>
+								
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-4 col-md-6">
+					<div class="feature-item">
+						<i class="ti-files"></i>
+						<h4>Doubt Solving</h4>
+						<div class="wow fadeIn" data-wow-duration="1s" data-wow-delay=".3s">
+							<p>
+								
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-4 col-md-6">
+					<div class="feature-item">
+						<i class="ti-headphone-alt"></i>
+						<h4>Live Support</h4>
+						<div class="wow fadeIn" data-wow-duration="1s" data-wow-delay=".5s">
+							<p>
+								
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+    </section>
+    {% include '/includes/_footer.html' %}
+  {% endblock %}
+ 

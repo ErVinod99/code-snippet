@@ -3,11 +3,20 @@ import datetime
 from flask_login import UserMixin
 from app import ModelView, admin
 
+
 @login_manager.user_loader
 def load_user(id):
     return Students_data.query.get(int(id))
 
 
+'''
+@login_manager.user_loader
+def user_loader(user_id):
+    user = Students_data.query.filter_by(id=user_id).first()
+    if user:
+        return user
+    return None
+'''
 
 class Students_data(db.Model, UserMixin):
     __tablename__="students_data"
@@ -27,6 +36,8 @@ class Students_data(db.Model, UserMixin):
     student_password= db.Column(db.String(60))
     date_created = db.Column(db.DateTime, default= datetime.datetime.utcnow)
     payment_status = db.Column(db.Boolean, default = False)
+    is_student = db.Column(db.Boolean, default = False)
+    is_faculty = db.Column(db.Boolean, default = False)
     #is_admin = db.Column(db.Boolean, default=True)
 
     def __init__(self, student_id,first_name,last_name,student_email,parent_email,student_phone_number,parent_phone_number,city,standard,current_address,board,subjects,student_password):

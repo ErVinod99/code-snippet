@@ -1,0 +1,237 @@
+{% extends "layout.html" %}
+{% block title %}Student registration{% endblock %}
+{% block body %}
+
+{% include '/includes/_header.html' %}
+
+<!-- Start Banner Area -->
+<section class="banner-area relative">
+  <div class="container">
+    <div class="row d-flex align-items-center justify-content-center">
+      <div class="about-content col-lg-12">
+        <h1 class="text-white">
+          Student Registration
+        </h1>
+        <p>If you have any queries or you have filled wrong credentials during registration process kindly send
+          corrections required through this.</p>
+        <div class="link-nav">
+          <span class="box">
+            <a href="/">Home </a>
+            <i class="lnr lnr-arrow-right"></i>
+            <a href="/student_signup">Student Registration</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="rocket-img">
+    <img src="/static/img/rocket.png" alt="">
+  </div>
+</section>
+<!-- End Banner Area -->
+
+<!-- Start contact-page Area -->
+<section class="courses-area section-gap">
+  <div class="container ">
+    <div class="text-center pb-5">{% include 'includes/_message.html' %}</div>
+    <form class="form-area contact-form text-left" id="myForm" action="/student_signup" method="POST">
+      <div class="row">
+        <div class="col-md-6 col-sm-12">
+          <div class="form-group">
+            <!--<label for="CName">Name</label>-->
+            <div class="validateField">
+              <input name="firstName" id="firstName" placeholder="First Name" onfocus="this.placeholder = ''"
+                onblur="this.placeholder = 'Enter your first name'" class="common-input mb-20 form-control" required
+                type="text" required>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-sm-12">
+          <div class="form-group">
+            <!--<label for="CName">Email Id</label>-->
+            <div class="validateField">
+              <input name="lastName" id="lastName" placeholder="Last Name" onfocus="this.placeholder = ''"
+                onblur="this.placeholder = 'Enter your last name'" class="common-input mb-20 form-control" required
+                type="text" required>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6 col-sm-12">
+          <div class="form-group">
+            <!--<label for="CName">Name</label>-->
+            <div class="validateField">
+              <input name="email" id="email" placeholder="Email" onfocus="this.placeholder = ''"
+                onblur="this.placeholder = 'Enter your Email'" class="common-input mb-20 form-control" required
+                type="email" required>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-sm-12">
+          <div class="form-group">
+            <!--<label for="CName">Email Id</label>-->
+            <div class="validateField">
+              <input name="alternet_email" id="alternet_email" placeholder="Alternate Email"
+                onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter your Alternate email'"
+                class="common-input mb-20 form-control" required type="email" required>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6 col-sm-12">
+          <div class="form-group">
+            <!--<label for="CName">Name</label>-->
+            <div class="validateField">
+              <input name="mobile" id="mobile" placeholder="Mobile Number" onfocus="this.placeholder = ''"
+                onblur="this.placeholder = 'Enter your Mobile Number'" class="common-input mb-20 form-control" required
+                type="text" required maxlength="10">
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-sm-12">
+          <div class="form-group">
+            <!--<label for="CName">Email Id</label>-->
+            <div class="validateField">
+              <input name="city" id="city" placeholder="City" onfocus="this.placeholder = ''"
+                onblur="this.placeholder = 'Enter your City'" class="common-input mb-20 form-control" required
+                type="text" required>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6 col-sm-12">
+          <div class="form-group">
+            <!--<label for="CName">Name</label>-->
+            <div class="validateField">
+              <select class="common-input mb-20 form-control" name="class_standard" id="meal_preference" required>
+                <option value="select standard">Select Standard</option>
+                <option value="5 " disabled>5</option>
+                <option value="6" disabled>6</option>
+                <option value="7" disabled>7</option>
+                <option value="8" disabled>8</option>
+                <option value="9">9</option>
+                <option value="10" disabled>10</option>
+                <option value="11" disabled>11</option>
+                <option value="12" disabled>12</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <!--<div class="col-md-6 col-sm-12">
+                <div class="form-group">
+                  
+                  <div class="validateField">
+                  <label for="subject">Select Subject</label>
+                 <div class="form-check-inline">
+                    <label class="form-check-label">
+                      <input type="checkbox" class="form-check-input" value="">Option 1
+                    </label>
+                  </div>
+                  <div class="form-check-inline">
+                    <label class="form-check-label">
+                      <input type="checkbox" class="form-check-input" value="">Option 2
+                    </label>
+                  </div>
+                  <div class="form-check-inline">
+                    <label class="form-check-label">
+                      <input type="checkbox" class="form-check-input" value="" disabled>Option 3
+                    </label>
+                  </div>
+                  </div>
+                </div>
+              </div>-->
+        <div class="col-md-6 col-sm-12">
+
+          <div class="form-group">
+            <!--<label for="CName">Name</label>-->
+            <div class="validateField">
+              <select class="common-input mb-20 form-control" name="edu_board" id="meal_preference" required>
+                <option value="Select Education Board">Select Education Board</option>
+
+                <option value="State Board">State Board</option>
+
+              </select>
+            </div>
+          </div>
+          <!------------------
+              <input name="edu_board" id="edu_board" placeholder="Educational Board" onfocus="this.placeholder = ''"
+                onblur="this.placeholder = 'Enter your Educational Bord'" class="common-input mb-20 form-control"
+                required type="text" required>
+                ----------->
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6 col-sm-12">
+          <div class="form-group">
+            <!--<label for="CName">Name</label>-->
+            <div class="validateField">
+              <label for="subject" class="text-left">Select Subject</label>
+            </div>
+            <div class="validateField">
+              <div class="form-check-inline">
+                <label class="form-check-label">
+                  <input type="checkbox" class="form-check-input" name="subject" value="Math">Math
+                </label>
+              </div>
+              <div class="form-check-inline">
+                <label class="form-check-label">
+                  <input type="checkbox" class="form-check-input" name="subject" value="Science">Science
+                </label>
+              </div>
+              <div class="form-check-inline">
+                <label class="form-check-label">
+                  <input type="checkbox" class="form-check-input" name="subject" value="Social Science" disabled>Social Science
+                </label>
+              </div>
+              <div class="form-check-inline">
+                <label class="form-check-label">
+                  <input type="checkbox" class="form-check-input" name="subject" value="English" disabled>English
+                </label>
+              </div>
+              <div class="form-check-inline">
+                <label class="form-check-label">
+                  <input type="checkbox" class="form-check-input" name="subject" value="Marathi" disabled>Marathi
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6 col-sm-12">
+          <div class="form-group">
+            <!--<label for="CName">Name</label>-->
+          </div>
+        </div>
+        <div class="col-md-6 col-sm-12">
+          <div class="form-group">
+
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-12 col-sm-12 text-center">
+          <div class="form-group">
+            <!--<label for="CName">Name</label>-->
+            <div class="validateField">
+              <input type="submit" value="Register" class="primary-btn" id="submit" name="submit">
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</section>
+<!-- End contact-page Area -->
+{% include '/includes/_footer.html' %}
+{% endblock %}

@@ -13,7 +13,7 @@ app.config['MYSQL_DB'] = 'maiic_video_conference_details'
 '''
 
 #SQLAlchemy
-app.config['SQLALCHEMY_DATABASE_URI'] ='mysql://root:mysql2020@localhost/maiic1'
+app.config['SQLALCHEMY_DATABASE_URI'] ='mysql://root:mysql2020@localhost/maiic3'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 

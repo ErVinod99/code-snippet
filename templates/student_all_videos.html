@@ -32,10 +32,9 @@
 
             <div class="header-right">
 
-               
-                {% if session.loggedin %}
+
                 <a href="student_dashboard" class="btn btn-primary" title="Back"><b></b><i class="fa fa-bell">Back</i></a>
-                {% endif %}
+
                 <a href="{{ url_for('logout') }}" class="btn btn-danger" title="Logout"><i class="fa fa-sign-out ">Logout</i></a>
 
             </div>
@@ -49,7 +48,7 @@
                             <img src="/static/assets/img/user.png" class="img-thumbnail" />
 
                             <div class="inner-text">
-                                <p>Hello {{ first_name }} !</p>
+                                <p>Hello {{ current_user.first_name }} !</p>
                             <br />
                                 <small> Welcome to E-learning  </small>
                             </div>
@@ -80,10 +79,10 @@
                          <ul class="nav nav-second-level">
                            
                              <li>
-                                <a href="student_update_profile"><i class="fas fa-edit "></i>Update Profile</a>
+                                <a href="#"><i class="fas fa-edit "></i>Update Profile</a>
                             </li>
                              <li>
-                                <a href="student_update_profile_picture"><i class="fa fa-file-image-o "></i>Update Photo</a>
+                                <a href="#"><i class="fa fa-file-image-o "></i>Update Photo</a>
                             </li>
                              
                            
@@ -102,6 +101,21 @@
             <div id="page-inner">
                 <div class="row">
                     <div class="col-md-12">
+
+
+                        {% set subject = current_user.subjects %}
+                        {% set split_sub = subject.split(",") %}
+                        {% set len_sub = split_sub|length %}
+
+                        {% if current_user.payment_status != True %}
+                        <h3>Your payment is pending, please pay for accessing videos.</h3>
+                        {% if len_sub == 2 %}
+                        <a href="thankyou2">Pay Now</a>
+                        {% else %}
+                        <a href="thankyou1">Pay Now</a>
+                        {% endif %}
+                        {% endif %}
+                         
                         <h1 class="page-head-line">All Leacture Video</h1>
                         <h1 class="page-subhead-line">you can watch the leacture subject wise </h1>
 

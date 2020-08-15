@@ -42,16 +42,7 @@
 							Student Login
 
 						</span>
-						<p> {% with messages = get_flashed_messages(with_categories=true) %}
-							{% if messages %}
-							{% for category, message in messages %}
-							<div class="alert alert-{{ category }}">
-								{{ message }}
-							</div>
-							{% endfor %}
-							{% endif %}
-							{% endwith %}
-							{% block content %}{% endblock %}</p>
+						<p>{% include '/includes/_messages.html' %} </p>
 
 						<div class="wrap-input100 validate-input m-b-23" data-validate="Username is reauired">
 							<span class="label-input100">Student ID</span>
@@ -74,7 +65,7 @@
 								<div class="login100-form-bgbtn"></div>
 
 
-								<h2><a href="" class="login100-form-btn">Login</a></h2>
+								<h4><input type="submit" value="Login" class="submit" id="submit" name="submit" /></h4>
 
 
 							</div>
